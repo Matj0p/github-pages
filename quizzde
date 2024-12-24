@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur Amir</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .question {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .question.active {
+            display: block;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 15px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        input[type="radio"] {
+            accent-color: #007BFF;
+        }
+        button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e7f3e7;
+            color: #2c662d;
+            border: 1px solid #c1e2c1;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #q1 { background-image: url('image1.jpg'); }
+        #q2 { background-image: url('image2.jpg'); }
+        #q3 { background-image: url('image3.jpg'); }
+        #q4 { background-image: url('image4.jpg'); }
+        #q5 { background-image: url('image5.jpg'); }
+        #q6 { background-image: url('image6.jpg'); }
+        #q7 { background-image: url('image7.jpg'); }
+        #q8 { background-image: url('image8.jpg'); }
+        #q9 { background-image: url('image9.jpg'); }
+        #q10 { background-image: url('image10.jpg'); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz sur Amir</h1>
+        <form id="quiz-form">
+            <div class="question active" id="q1">
+                <h2>1. Quelle est la nationalité d’Amir ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="a"> Française</label></li>
+                    <li><label><input type="radio" name="q1" value="b"> Israélienne</label></li>
+                    <li><label><input type="radio" name="q1" value="c"> Les deux</label></li>
+                    <li><label><input type="radio" name="q1" value="d"> Belge</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(1)">Suivant</button>
+            </div>
+            <div class="question" id="q2">
+                <h2>2. Dans quelle émission Amir s’est-il fait connaître en France ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="a"> Nouvelle Star</label></li>
+                    <li><label><input type="radio" name="q2" value="b"> Star Academy</label></li>
+                    <li><label><input type="radio" name="q2" value="c"> The Voice</label></li>
+                    <li><label><input type="radio" name="q2" value="d"> La France a un incroyable talent</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(2)">Suivant</button>
+            </div>
+            <div class="question" id="q3">
+                <h2>3. Quel titre d’Amir a représenté la France à l’Eurovision en 2016 ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q3" value="a"> J’ai cherché</label></li>
+                    <li><label><input type="radio" name="q3" value="b"> On dirait</label></li>
+                    <li><label><input type="radio" name="q3" value="c"> Les rues de ma peine</label></li>
+                    <li><label><input type="radio" name="q3" value="d"> Carrousel</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(3)">Suivant</button>
+            </div>
+            <div class="question" id="q4">
+                <h2>4. Combien de langues Amir parle-t-il couramment ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q4" value="a"> 2</label></li>
+                    <li><label><input type="radio" name="q4" value="b"> 3</label></li>
+                    <li><label><input type="radio" name="q4" value="c"> 4</label></li>
+                    <li><label><input type="radio" name="q4" value="d"> 5</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(4)">Suivant</button>
+            </div>
+            <div class="question" id="q5">
+                <h2>5. Avant de devenir chanteur, Amir a étudié et travaillé dans un domaine bien spécifique. Lequel ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q5" value="a"> La médecine dentaire</label></li>
+                    <li><label><input type="radio" name="q5" value="b"> Le droit</label></li>
+                    <li><label><input type="radio" name="q5" value="c"> L’ingénierie</label></li>
+                    <li><label><input type="radio" name="q5" value="d"> La communication</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(5)">Suivant</button>
+            </div>
+            <div class="question" id="q6">
+                <h2>6. Dans quel pays Amir est-il né ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q6" value="a"> Israël</label></li>
+                    <li><label><input type="radio" name="q6" value="b"> France</label></li>
+                    <li><label><input type="radio" name="q6" value="c"> Maroc</label></li>
+                    <li><label><input type="radio" name="q6" value="d"> Tunisie</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(6)">Suivant</button>
+            </div>
+            <div class="question" id="q7">
+                <h2>7. Quelle est la signification de la chanson J’ai cherché selon Amir ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q7" value="a"> L’amour de soi et des autres</label></li>
+                    <li><label><input type="radio" name="q7" value="b"> La quête de la liberté</label></li>
+                    <li><label><input type="radio" name="q7" value="c"> La recherche du bonheur et de l’épanouissement</label></li>
+                    <li><label><input type="radio" name="q7" value="d"> Un hommage à sa famille</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(7)">Suivant</button>
+            </div>
+            <div class="question" id="q8">
+                <h2>8. Quel est le titre du premier album studio d’Amir sorti en France ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q8" value="a"> Addictions</label></li>
+                    <li><label><input type="radio" name="q8" value="b"> Au cœur de moi</label></li>
+                    <li><label><input type="radio" name="q8" value="c"> Ressources</label></li>
+                    <li><label><input type="radio" name="q8" value="d"> Révélation</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(8)">Suivant</button>
+            </div>
+            <div class="question" id="q9">
+                <h2>9. Amir a participé à un album hommage à un chanteur français célèbre. Lequel ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q9" value="a"> Claude François</label></li>
+                    <li><label><input type="radio" name="q9" value="b"> Daniel Balavoine</label></li>
+                    <li><label><input type="radio" name="q9" value="c"> Jean-Jacques Goldman</label></li>
+                    <li><label><input type="radio" name="q9" value="d"> Charles Aznavour</label></li>
+                </ul>
+                <button type="button" onclick="nextQuestion(9)">Suivant</button>
+            </div>
+            <div class="question" id="q10">
+                <h2>10. Quelle chanson d’Amir a été utilisée comme générique d’une émission française ?</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="q10" value="a"> On dirait</label></li>
+                    <li><label><input type="radio" name="q10" value="b"> Longtemps</label></li>
+                    <li><label><input type="radio" name="q10" value="c"> Rétine</label></li>
+                    <li><label><input type="radio" name="q10" value="d"> J’ai cherché</label></li>
+                </ul>
+                <button type="button" onclick="showResult()">Valider mes réponses</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function nextQuestion(current) {
+            const currentQuestion = document.getElementById(`q${current}`);
+            const nextQuestion = document.getElementById(`q${current + 1}`);
+
+            if (currentQuestion && nextQuestion) {
+                currentQuestion.classList.remove('active');
+                nextQuestion.classList.add('active');
+            }
+        }
+
+        function showResult() {
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'c',
+                q3: 'a',
+                q4: 'b',
+                q5: 'a',
+                q6: 'a',
+                q7: 'c',
+                q8: 'b',
+                q9: 'b',
+                q10: 'd'
+            };
+
+            const form = document.getElementById('quiz-form');
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            Object.keys(correctAnswers).forEach(question => {
+                const userAnswer = form[question].value;
+                if (userAnswer === correctAnswers[question]) {
+                    score++;
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerText = `Vous avez obtenu ${score} sur ${totalQuestions} bonnes réponses !`;
+        }
+    </script>
+</body>
+</html>
